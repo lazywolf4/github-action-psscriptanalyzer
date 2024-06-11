@@ -12,7 +12,7 @@ $analyzeParams = @{
 # By default, run PSScriptAnalyzer on the whole repository
 # but allow overriding this with INPUT_ROOTPATH environment variable
 if ($env:INPUT_ROOTPATH) {
-    $analyzeParams.Path = Join-Path '/github/workspace' $env:INPUT_ROOTPATH
+    $analyzeParams.Path = Join-Path "$env:GITHUB_WORKSPACE" $env:INPUT_ROOTPATH
 } else {
     $analyzeParams.Path = $env:GITHUB_WORKSPACE
 }
