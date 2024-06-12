@@ -20,7 +20,7 @@ if ($env:INPUT_ROOTPATH) {
 
 # Path to custom script analyzer settings
 if ($env:INPUT_SETTINGSPATH) {
-    $analyzeParams.Settings = Join-Path '/github/workspace' $env:INPUT_SETTINGSPATH
+    $analyzeParams.Settings = Join-Path "$env:GITHUB_WORKSPACE" $env:INPUT_SETTINGSPATH
 }
 
 # Run PSScriptAnalyzer
